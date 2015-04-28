@@ -18,6 +18,6 @@ git push origin master
 So I created eGit(easy Git) to automate this. This is my workflow
 now.
 
-* Run `python egit.py RepoName`
+* Run `python egit.py RepoName username`
 * Type in my credentials when prompted
 * That's it!
