@@ -5,12 +5,12 @@ import os
 
 arguments = sys.argv
 
-if len(arguments) == 1:
-    print 'Enter repo name'
+if len(arguments) < 3:
+    print 'Usage: python egit.py RepoName username'
     sys.exit(0)
 
 repo = arguments[1]
-username = 'astronomersiva'
+username = arguments[2]
 
 try:
     os.chdir(repo)
@@ -18,10 +18,10 @@ except:
     print 'Create master first'
     sys.exit(0)
 
-user = 'https://github.com/astronomersiva/'
+userlink = 'https://github.com/' + username + '/'
 commands = [
     'git init',
-    'git remote add origin ' + user + repo + '.git',
+    'git remote add origin ' + userlink + repo + '.git',
     'git add .',
     'git commit -m "Initial Commit"',
     'git push origin master'
