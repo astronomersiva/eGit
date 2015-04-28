@@ -19,9 +19,13 @@ except:
     sys.exit(0)
 
 user = 'https://github.com/astronomersiva/'
+commands = [
+    'git init',
+    'git remote add origin ' + user + repo + '.git',
+    'git add .',
+    'git commit -m "Initial Commit"',
+    'git push origin master'
+    ]
 
-os.system('git init')
-os.system('git remote add origin ' + user + repo + '.git')
-os.system('git add .')
-os.system('git commit -m "Initial Commit"')
-os.system('git push origin master')
+for command in commands:
+    os.system(command)
